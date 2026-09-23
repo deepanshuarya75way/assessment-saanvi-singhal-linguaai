@@ -122,10 +122,6 @@ The app will be available at `http://localhost:3000`
 
 ---
 
-## 📈 Status
-
-🚧 **In active development** — Pre-Final Year B.Tech CSE Project  
-📅 Expected completion: May 2027
 
 ### Roadmap
 - [x] Project setup (FastAPI + React + PostgreSQL)
