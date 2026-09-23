@@ -127,10 +127,8 @@ The app will be available at `http://localhost:3000`
 - [x] Project setup (FastAPI + React + PostgreSQL)
 - [x] AI Speaking Partner integration
 - [x] Writing Evaluator
-- [ ] Flashcard system with SM-2
-- [ ] User dashboard & analytics
-- [ ] Mobile responsive UI
-- [ ] Deployment
+- [x] Flashcard system with SM-2
+- [x] User dashboard & analytics
 
 ---
 
