@@ -1,7 +1,6 @@
 # LinguaAI 🌍
 ### AI-Powered Multilingual Language Learning Platform
 
-[![Status](https://img.shields.io/badge/Status-In%20Development-yellow)](https://github.com/saanvisinghal24/linguaai)
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://python.org)
 [![React](https://img.shields.io/badge/React-18-61dafb)](https://reactjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green)](https://fastapi.tiangolo.com)
@@ -18,7 +17,6 @@
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Supported Certifications](#supported-certifications)
-- [Status](#status)
 - [Author](#author)
 
 ---
