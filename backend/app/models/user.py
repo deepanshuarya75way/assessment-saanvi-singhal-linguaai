@@ -5,6 +5,8 @@
 # SQLAlchemy reads these classes and creates the actual SQL tables for you.
 # You never have to write CREATE TABLE statements manually.
 
+from time import timezone
+
 from sqlalchemy import Column, Integer, String, Float, DateTime, Text, JSON, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
@@ -157,3 +159,18 @@ class UserProgress(Base):
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
 
     user = relationship("User", back_populates="progress")
+
+class LearningJob(Base):
+    _tablenname_="learning_jobs"
+     
+    id=Column(String(36),primary_key=True)
+    user_id=Column(Integer,ForeignKey("users.id"),nullable=False,index=True)
+    action=Column(String(50),nullable=False,default="study_plan")
+    status=Column(String(20),nullable=False,default="queued")
+    attempts=Column(Integer,nullable=False,default=0)
+    payload=Column(JSON,nullable=False,default=dict)
+    result=Column(JSON,nullable=True)
+    error=Column(Text,nullable=True)
+    created_at=Column(DateTime(timezone=True,server_default=func.now()))
+    updated_at=Column(DateTime(timezone=True),
+    server_default=func.now())

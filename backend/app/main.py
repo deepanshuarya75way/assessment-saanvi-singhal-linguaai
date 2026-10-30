@@ -18,7 +18,7 @@ from pydantic import BaseModel
 from app.models import user  # noqa: F401
 
 # Import all routers
-from app.routers import auth, grammar, writing, speaking, flashcards, progress, listening, settings
+from app.routers import auth, grammar, writing, speaking, flashcards, progress, listening, settings,jobs
 
 # Create the FastAPI app
 app = FastAPI(
@@ -50,6 +50,7 @@ app.include_router(flashcards.router)
 app.include_router(progress.router)
 app.include_router(listening.router)
 app.include_router(settings.router)
+app.include_router(jobs.router)
 
 
 # ─── Create Database Tables ──────────────────────────────────────────────────
@@ -58,7 +59,8 @@ app.include_router(settings.router)
 @app.on_event("startup")
 def startup():
     Base.metadata.create_all(bind=engine)
-    print("✅ Database tables ready")
+    jobs.recover_jobs()
+    print("✅ Database tables and learning job worker ready")
 
 
 # ─── Health Check ────────────────────────────────────────────────────────────
